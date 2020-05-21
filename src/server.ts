@@ -40,7 +40,7 @@ import {filterImageFromURL, deleteLocalFiles} from './util/util';
     console.log(`image path: ${imagePath}`);
 
     res.status(200)
-       .sendFile(imagePath);
+       .sendFile(imagePath, () => deleteLocalFiles([imagePath]));
   });
   //! END @TODO1
   
